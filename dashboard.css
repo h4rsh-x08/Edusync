@@ -1,0 +1,357 @@
+/* Dashboard — the hero (Now/Next) is the one bold moment on this page;
+   everything below it stays quiet and list-like on purpose. */
+
+.alert-bell {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.alert-bell:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.alert-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--coral);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Hero: Now / Next ---------- */
+.hero-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.hero-now {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+}
+
+.hero-next {
+  background: var(--surface);
+}
+
+.hero-label {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.hero-next .hero-label {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.hero-now .hero-empty {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+}
+
+.hero-next .hero-empty {
+  color: var(--ink-faint);
+  font-size: 14.5px;
+}
+
+.hero-subject {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.hero-next .hero-subject {
+  font-size: 21px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13.5px;
+  opacity: 0.9;
+}
+
+.hero-next .hero-meta {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Today's schedule strip ---------- */
+.schedule-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 18px;
+}
+
+.schedule-strip:has(.empty-state) {
+  padding: 0;
+}
+
+.schedule-item {
+  flex-shrink: 0;
+  min-width: 148px;
+  padding: 12px 14px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.schedule-item.is-current {
+  border-color: var(--indigo);
+  background: var(--indigo-tint);
+}
+
+.schedule-item .time {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.schedule-item.is-current .time {
+  color: var(--indigo-dark);
+}
+
+.schedule-item .subject {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.schedule-item .room {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Two column layout ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.block {
+  margin-bottom: 4px;
+}
+
+/* ---------- Deadlines ---------- */
+.deadline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.deadline-list li.deadline-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.deadline-list li.deadline-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.deadline-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deadline-info .title {
+  font-weight: 600;
+  font-size: 14.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deadline-info .subject {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Progress ---------- */
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--indigo);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+/* ---------- Alerts ---------- */
+.alert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alert-row {
+  display: flex;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: var(--radius-s);
+  border-left: 3px solid var(--line-strong);
+  background: var(--paper);
+}
+
+.alert-row.urgent {
+  border-left-color: var(--coral);
+  background: var(--coral-tint);
+}
+.alert-row.warning {
+  border-left-color: var(--amber);
+  background: var(--amber-tint);
+}
+.alert-row.info {
+  border-left-color: var(--indigo);
+  background: var(--indigo-tint);
+}
+
+.alert-row .msg {
+  font-size: 13.5px;
+  flex: 1;
+}
+
+.alert-row .when {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ---------- Quick notes ---------- */
+.note-module {
+  background: #fbf7e8;
+  border-color: #ecdfa8;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.note-form textarea {
+  resize: vertical;
+  padding: 10px 12px;
+  border-radius: var(--radius-s);
+  border: 1px solid #e4d69a;
+  background: #fffdf5;
+  font-family: var(--font-body);
+}
+
+.note-form textarea:focus {
+  border-color: var(--indigo);
+}
+
+.note-form .btn {
+  align-self: flex-end;
+}
+
+.note-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-s);
+  background: #fffdf5;
+  border: 1px solid #eee1a6;
+}
+
+.note-row .text {
+  font-size: 13.5px;
+  white-space: pre-wrap;
+}
+
+.note-row button {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.note-row button:hover {
+  color: var(--coral);
+}
+
+@media (max-width: 900px) {
+  .hero-row,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}

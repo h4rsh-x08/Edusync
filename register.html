@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account · EduSync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="page">
+
+  <section class="brand-panel">
+    <div class="mesh" aria-hidden="true"></div>
+    <div class="brand-content">
+      <div class="logo">
+        <div class="logo-ring">
+          <div class="logo-orbit"><span class="logo-cap"></span></div>
+        </div>
+        <span class="logo-word">Edu<span class="accent">Sync</span></span>
+      </div>
+
+      <p class="tagline">Set up your profile once, and every semester after stays in sync...</p>
+
+    </div>
+  </section>
+
+  <section class="form-panel">
+    <div class="form-card">
+      <h1>Create your account</h1>
+      <p class="sub">Join EduSync to start tracking your semester.</p>
+
+      <form id="registerForm" novalidate>
+
+        <div class="field span-2">
+          <input type="text" id="fullName" placeholder=" " required>
+          <label for="fullName">Full name</label>
+        </div>
+
+        <div class="field">
+          <input type="text" id="rollNo" placeholder=" " required>
+          <label for="rollNo">Roll number</label>
+        </div>
+
+        <div class="field select-field">
+          <label for="semester">Semester</label>
+          <select id="semester" required>
+            <option value="" disabled selected>Select semester</option>
+            <option>1st Semester</option>
+            <option>2nd Semester</option>
+            <option>3rd Semester</option>
+            <option>4th Semester</option>
+            <option>5th Semester</option>
+            <option>6th Semester</option>
+            <option>7th Semester</option>
+            <option>8th Semester</option>
+          </select>
+        </div>
+
+        <div class="field select-field">
+          <label for="department">Department</label>
+          <select id="department" required>
+            <option value="" disabled selected>Select department</option>
+            <option>Computer Science</option>
+            <option>Electronics &amp; Communication</option>
+            <option>Mechanical Engineering</option>
+            <option>Civil Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Business Administration</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <input type="tel" id="phone" placeholder=" " pattern="[0-9]{10}" required>
+          <label for="phone">Phone number</label>
+        </div>
+
+        <div class="field span-2">
+          <input type="email" id="email" placeholder=" " required>
+          <label for="email">Email address</label>
+        </div>
+
+        <div class="field">
+          <input type="password" id="password" placeholder=" " minlength="6" required>
+          <label for="password">Password</label>
+        </div>
+
+        <div class="field">
+          <input type="password" id="confirmPassword" placeholder=" " minlength="6" required>
+          <label for="confirmPassword">Confirm password</label>
+        </div>
+
+        <button type="submit" id="registerBtn" class="span-2"><span>Create account</span></button>
+      </form>
+
+      <p id="statusMsg" class="status" role="status" aria-live="polite"></p>
+
+      <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </section>
+
+</div>
+
+<script type="module" src="register.js"></script>
+</body>
+</html>

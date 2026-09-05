@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in · EduSync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="page">
+
+  <section class="brand-panel">
+    <div class="mesh" aria-hidden="true"></div>
+    <div class="brand-content">
+      <div class="logo">
+        <div class="logo-ring">
+          <div class="logo-orbit"><span class="logo-cap"></span></div>
+        </div>
+        <span class="logo-word">Edu<span class="accent">Sync</span></span>
+      </div>
+
+      <p class="tagline">Plan It. Track It. Crush It.</p>
+
+
+    </div>
+  </section>
+
+  <section class="form-panel">
+    <div class="form-card">
+      <h1 id="welcome-text">Welcome back</h1>
+      <p class="sub">Log in to keep tracking your semester.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <input type="text" id="identifier" placeholder=" " required>
+          <label for="identifier">Email or roll number</label>
+        </div>
+
+        <div class="field">
+          <input type="password" id="password" placeholder=" " required minlength="6">
+          <label for="password">Password</label>
+        </div>
+
+        <div class="row-between">
+          <label class="checkbox">
+            <input type="checkbox" id="remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="link-muted">Forgot password?</a>
+        </div>
+
+        <button type="submit" id="loginBtn"><span>Log in</span></button>
+      </form>
+
+      <p id="statusMsg" class="status" role="status" aria-live="polite"></p>
+
+      <p class="switch">New to EduSync? <a href="register.html">Create an account</a></p>
+    </div>
+  </section>
+
+</div>
+
+<script type="module" src="login.js"></script>
+</body>
+</html>

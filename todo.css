@@ -1,0 +1,158 @@
+.add-task {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-task .field.grow {
+  flex: 1;
+  min-width: 220px;
+}
+
+.add-task .btn {
+  height: 40px;
+}
+
+.todo-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--indigo-tint);
+  border-color: var(--indigo);
+  color: var(--indigo-dark);
+}
+
+.hide-done {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-s);
+  background: var(--paper);
+  border-left: 4px solid var(--line-strong);
+}
+
+.todo-row.high {
+  border-left-color: var(--coral);
+}
+.todo-row.medium {
+  border-left-color: var(--amber);
+}
+.todo-row.low {
+  border-left-color: var(--sage);
+}
+
+.todo-row.done {
+  opacity: 0.55;
+}
+
+.todo-row.done .task-text {
+  text-decoration: line-through;
+}
+
+.todo-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.6px solid var(--line-strong);
+  background: var(--surface);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.todo-row.done .todo-check {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+.todo-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-text {
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 3px;
+}
+
+.task-meta .deadline {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.todo-delete {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.todo-delete:hover {
+  color: var(--coral);
+}
+
+@media (max-width: 640px) {
+  .add-task {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "Student": {
+    "22CS045": {
+      "name": "Aditi Sharma",
+      "email": "aditi.sharma@college.edu",
+      "rollNo": "22CS045",
+      "password": "mypassword123",
+      "course": "B.Tech Computer Science",
+      "branch": "Computer Science",
+      "semester": "5",
+      "section": "A",
+      "phone": "9876543210",
+      "bio": "",
+      "photoURL": "",
+
+      "timetable": {
+        "monday": [
+          { "start": "09:00", "end": "09:50", "subject": "DBMS", "room": "204", "faculty": "Dr. Rao" },
+          { "start": "10:00", "end": "10:50", "subject": "OS", "room": "108", "faculty": "Prof. Iyer" }
+        ]
+      },
+
+      "assignments": {
+        "-Nx1abc": { "title": "DBMS ER diagram", "subject": "DBMS", "dueDate": "2026-09-10", "priority": "high", "status": "pending" }
+      },
+
+      "exams": {
+        "-Nx1def": { "title": "OS mid-sem", "subject": "OS", "dueDate": "2026-09-15", "priority": "high" }
+      },
+
+      "alerts": {
+        "-Nx1ghi": { "message": "Fee payment deadline is Friday", "type": "warning", "timestamp": 1757145600000 }
+      },
+
+      "notes": {
+        "-Nx1jkl": { "text": "Ask professor about extra credit", "timestamp": 1757145600000 }
+      },
+
+      "todos": {
+        "-Nx1mno": { "text": "Buy graph sheets", "deadline": "2026-09-08", "priority": "low", "completed": false, "createdAt": 1757145600000 }
+      },
+
+      "calendarEvents": {
+        "-Nx1pqr": { "title": "College fest", "date": "2026-09-20", "type": "event" }
+      }
+    }
+  }
+}

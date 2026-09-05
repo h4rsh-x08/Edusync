@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My profile · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>My profile</h1>
+        <p class="subline">Your academic record, as held in EduSync.</p>
+      </div>
+    </header>
+
+    <section class="module profile-hero">
+      <img id="profile-avatar" alt="" src="">
+      <div class="profile-hero-text">
+        <h2 id="profile-name">—</h2>
+        <p id="profile-course">—</p>
+      </div>
+    </section>
+
+    <div class="profile-grid">
+      <section class="module">
+        <div class="section-title"><h2>Academic details</h2></div>
+        <dl class="info-list" id="academic-info">
+          <div class="info-row"><dt>Roll number</dt><dd data-field="rollNo">—</dd></div>
+          <div class="info-row"><dt>Course</dt><dd data-field="course">—</dd></div>
+          <div class="info-row"><dt>Branch / Department</dt><dd data-field="branch">—</dd></div>
+          <div class="info-row"><dt>Semester</dt><dd data-field="semester">—</dd></div>
+          <div class="info-row"><dt>Section</dt><dd data-field="section">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="module">
+        <div class="section-title"><h2>Contact</h2></div>
+        <dl class="info-list" id="contact-info">
+          <div class="info-row"><dt>Email</dt><dd data-field="email">—</dd></div>
+          <div class="info-row"><dt>Phone</dt><dd data-field="phone">—</dd><input type="tel" class="edit-input" data-field="phone" hidden></div>
+        </dl>
+
+        <div class="section-title" style="margin-top:22px;"><h2>Bio</h2></div>
+        <p class="bio-text" id="bio-display" data-field="bio">Nothing added yet.</p>
+        <textarea class="edit-input bio-input" data-field="bio" rows="3" hidden placeholder="Say a little about yourself…"></textarea>
+
+        <div class="profile-actions">
+          <button class="btn" id="edit-toggle" type="button">Edit contact &amp; bio</button>
+          <button class="btn primary" id="save-profile" type="button" hidden>Save changes</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="profile.js"></script>
+</body>
+</html>

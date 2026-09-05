@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1 id="greeting">Good day</h1>
+        <p class="subline" id="today-date">—</p>
+      </div>
+      <button class="alert-bell" id="alert-bell" type="button" aria-label="Alerts">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 2 6.5H4c.5-1 2-2.5 2-6.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M9.5 18.5a2.5 2.5 0 005 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="alert-count" id="alert-count" hidden>0</span>
+      </button>
+    </header>
+
+    <!-- Hero: Now / Next -->
+    <section class="hero-row">
+      <div class="hero-now module">
+        <div class="hero-label">Right now</div>
+        <div id="now-block" class="hero-body">
+          <p class="hero-empty">No class in session</p>
+        </div>
+      </div>
+      <div class="hero-next module">
+        <div class="hero-label">Up next</div>
+        <div id="next-block" class="hero-body">
+          <p class="hero-empty">Nothing else scheduled</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Today's schedule -->
+    <section class="block">
+      <div class="section-title"><h2>Today's schedule</h2></div>
+      <div class="module schedule-strip" id="schedule-strip">
+        <p class="empty-state"><strong>Nothing on the timetable</strong>No classes have been added for today yet.</p>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <!-- Deadlines + progress -->
+      <section class="block">
+        <div class="section-title"><h2>Deadlines</h2></div>
+        <div class="module">
+          <ul class="deadline-list" id="deadline-list">
+            <li class="empty-state"><strong>All clear</strong>No upcoming assignments or exams on record.</li>
+          </ul>
+        </div>
+
+        <div class="section-title" style="margin-top:22px;"><h2>Assignments completed</h2></div>
+        <div class="module">
+          <div class="progress-row">
+            <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+            <span class="progress-label" id="progress-label">0 of 0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alerts + Quick notes -->
+      <section class="block">
+        <div class="section-title"><h2>Alerts</h2></div>
+        <div class="module">
+          <ul class="alert-list" id="alert-list">
+            <li class="empty-state"><strong>No alerts</strong>Important messages will show up here.</li>
+          </ul>
+        </div>
+
+        <div class="section-title" style="margin-top:22px;"><h2>Quick notes</h2></div>
+        <div class="module note-module">
+          <form id="note-form" class="note-form">
+            <textarea id="note-input" placeholder="Jot something down…" rows="2" required></textarea>
+            <button type="submit" class="btn primary">Add note</button>
+          </form>
+          <ul class="note-list" id="note-list">
+            <li class="empty-state"><strong>No notes yet</strong>Quick notes you add will stay pinned here.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

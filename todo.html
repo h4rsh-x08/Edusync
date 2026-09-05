@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-do list · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="todo.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>To-do list</h1>
+        <p class="subline">Everything you need to get done, in one place.</p>
+      </div>
+    </header>
+
+    <form id="todo-form" class="add-task module">
+      <div class="field grow">
+        <label for="task-text">Task</label>
+        <input type="text" id="task-text" placeholder="e.g. Finish DBMS lab record" required>
+      </div>
+      <div class="field">
+        <label for="task-deadline">Deadline</label>
+        <input type="date" id="task-deadline">
+      </div>
+      <div class="field">
+        <label for="task-priority">Priority</label>
+        <select id="task-priority">
+          <option value="high">High</option>
+          <option value="medium" selected>Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <button type="submit" class="btn primary">Add task</button>
+    </form>
+
+    <div class="todo-toolbar">
+      <div class="filter-chips" id="filter-chips">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="high" type="button"><span class="priority-dot high"></span>High</button>
+        <button class="chip" data-filter="medium" type="button"><span class="priority-dot medium"></span>Medium</button>
+        <button class="chip" data-filter="low" type="button"><span class="priority-dot low"></span>Low</button>
+      </div>
+      <label class="hide-done">
+        <input type="checkbox" id="hide-done">
+        Hide completed
+      </label>
+    </div>
+
+    <ul class="todo-list module" id="todo-list">
+      <li class="empty-state"><strong>Nothing here yet</strong>Add your first task above, or it'll show up here once it's in the database.</li>
+    </ul>
+  </main>
+</div>
+
+<script type="module" src="todo.js"></script>
+</body>
+</html>

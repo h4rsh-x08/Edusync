@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My calendar · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>My calendar</h1>
+        <p class="subline">Assignments, exams and holidays, all in one view.</p>
+      </div>
+    </header>
+
+    <div class="calendar-layout">
+      <section class="module calendar-card">
+        <div class="calendar-nav">
+          <button type="button" id="prev-month" class="nav-btn" aria-label="Previous month">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <h2 id="month-label">Month Year</h2>
+          <button type="button" id="next-month" class="nav-btn" aria-label="Next month">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="weekday-row">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+
+        <div class="calendar-grid" id="calendar-grid"></div>
+
+        <div class="legend">
+          <span><i class="priority-dot high"></i>Exam</span>
+          <span><i class="priority-dot medium"></i>Assignment</span>
+          <span><i class="priority-dot low"></i>Holiday</span>
+          <span><i class="priority-dot" style="background:var(--indigo)"></i>Event</span>
+        </div>
+      </section>
+
+      <section class="calendar-side">
+        <div class="module">
+          <div class="section-title" style="margin-bottom:14px;"><h2>Add to calendar</h2></div>
+          <form id="event-form" class="event-form">
+            <div class="field">
+              <label for="event-title">Title</label>
+              <input type="text" id="event-title" placeholder="e.g. Mid-sem exam" required>
+            </div>
+            <div class="field">
+              <label for="event-date">Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+            <div class="field">
+              <label for="event-type">Type</label>
+              <select id="event-type">
+                <option value="event">Event</option>
+                <option value="assignment">Assignment</option>
+                <option value="exam">Exam</option>
+                <option value="holiday">Holiday</option>
+              </select>
+            </div>
+            <button type="submit" class="btn primary">Add to calendar</button>
+          </form>
+        </div>
+
+        <div class="module">
+          <div class="section-title" style="margin-bottom:10px;"><h2 id="agenda-title">Selected day</h2></div>
+          <ul class="agenda-list" id="agenda-list">
+            <li class="empty-state"><strong>Nothing on this day</strong>Pick a date on the calendar to see it here.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="calendar.js"></script>
+</body>
+</html>
