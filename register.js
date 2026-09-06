@@ -59,11 +59,16 @@ registerForm.addEventListener('submit', function (event) {
 
   push(referenceInDB,newStudent)
 
+
   setTimeout(function () {
     registerBtn.classList.remove('loading');
     const firstName = fullName.split(' ')[0] || 'there';
     statusMsg.textContent = 'Account created for ' + firstName + '! You can now log in.';
     registerForm.reset();
   }, 900);
+
+
+
+  
 
 });

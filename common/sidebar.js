@@ -1,7 +1,3 @@
-// ============================================================
-// EduSync — shared sidebar
-// Renders into <div id="sidebar-root"></div> on every page.
-// ============================================================
 
 import { getCurrentId } from "./firebase-config.js";
 
@@ -14,7 +10,10 @@ const DEFAULT_AVATAR =
     <path d="M8 35c1.8-7.5 8-11 13-11s11.2 3.5 13 11" fill="#3454d1"/>
   </svg>`);
 
+
+
 const NAV_ITEMS = [
+  
   {
     id: "dashboard",
     label: "Dashboard",
@@ -57,19 +56,9 @@ const NAV_ITEMS = [
     href: "todo.html",
     icon: `<path d="M9 6.5h11M9 12h11M9 17.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 6.5l1.2 1.2L7.5 5.3M4 17.5l1.2 1.2 2.3-2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="4" y="10.8" width="3.2" height="3.2" rx="0.6" stroke="currentColor" stroke-width="1.6" fill="none"/>`
   },
-  {
-    id: "profile",
-    label: "My profile",
-    href: "profile.html",
-    icon: `<circle cx="12" cy="8.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.2-4.2 4.3-6.3 7-6.3s5.8 2.1 7 6.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`
-  }
 ];
 
-/**
- * Renders the sidebar shell immediately using cached localStorage values
- * (so it never looks empty while Firebase loads), then call
- * updateSidebarProfile() once the live student record arrives.
- */
+
 export function renderSidebar(activeId) {
   const root = document.getElementById("sidebar-root");
   if (!root) return;
@@ -79,17 +68,17 @@ export function renderSidebar(activeId) {
   root.innerHTML = `
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="mark">E</div>
-        <span>EduSync</span>
+        <div class="mark"></div>
+        <span id="title">EduSync</span>
       </div>
 
-      <div class="sidebar-profile">
+      <a href="profile.html" class="sidebar-profile">
         <img id="sidebar-avatar" src="${DEFAULT_AVATAR}" alt="">
         <div class="sidebar-profile-text">
           <div class="name" id="sidebar-name">${escapeHtml(cachedName)}</div>
-          <div class="meta" id="sidebar-meta">Loading…</div>
+          <div class="meta" id="sidebar-meta"></div>
         </div>
-      </div>
+      </a>
 
       <nav class="sidebar-nav">
         ${NAV_ITEMS.map(
@@ -122,7 +111,7 @@ export function renderSidebar(activeId) {
   });
 }
 
-/** Call this once the live Firebase student record loads. */
+
 export function updateSidebarProfile(data) {
   const nameEl = document.getElementById("sidebar-name");
   const metaEl = document.getElementById("sidebar-meta");
@@ -134,7 +123,7 @@ export function updateSidebarProfile(data) {
   localStorage.setItem("cachedName", name);
 
   const metaParts = [data.rollNo, data.course].filter(Boolean);
-  metaEl.textContent = metaParts.length ? metaParts.join(", ") : (data.email || "");
+  
 
   if (data.photoURL) {
     avatarEl.src = data.photoURL;

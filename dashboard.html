@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard · EduSync</title>
@@ -18,16 +22,12 @@
         <h1 id="greeting">Good day</h1>
         <p class="subline" id="today-date">—</p>
       </div>
-      <button class="alert-bell" id="alert-bell" type="button" aria-label="Alerts">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 2 6.5H4c.5-1 2-2.5 2-6.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M9.5 18.5a2.5 2.5 0 005 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <span class="alert-count" id="alert-count" hidden>0</span>
+        <div class="alert-count" id="alert-count" hidden=true></div>
+        
       </button>
     </header>
 
-    <!-- Hero: Now / Next -->
+  
     <section class="hero-row">
       <div class="hero-now module">
         <div class="hero-label">Right now</div>
