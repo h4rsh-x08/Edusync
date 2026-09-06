@@ -118,7 +118,7 @@ export function renderSidebar(activeId) {
     localStorage.removeItem("cachedName");
     sessionStorage.removeItem("currentId");
     sessionStorage.removeItem("currentUserPass");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   });
 }
 

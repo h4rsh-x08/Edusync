@@ -78,7 +78,7 @@ export function requireSession(onData) {
   const storedPass = readStorage("currentUserPass");
 
   if (!currentId || !storedPass) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -87,7 +87,7 @@ export function requireSession(onData) {
     (snapshot) => {
       if (!snapshot.exists()) {
         clearSession();
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
       }
 
@@ -100,7 +100,7 @@ export function requireSession(onData) {
 
       if (!match) {
         clearSession();
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
       }
 
