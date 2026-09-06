@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignments · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="assignments.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>Assignments</h1>
+        <p class="subline">Set by your teachers. Attach your work once it's ready.</p>
+      </div>
+    </header>
+
+    <section class="module summary-strip" id="summary-strip">
+      <div class="summary-stat">
+        <div class="summary-value" id="stat-pending">0</div>
+        <div class="summary-caption">Pending</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value" id="stat-submitted">0</div>
+        <div class="summary-caption">Submitted</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value" id="stat-credits">0</div>
+        <div class="summary-caption">Credits open</div>
+      </div>
+    </section>
+
+    <div class="assignments-toolbar">
+      <div class="filter-chips" id="filter-chips">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="pending" type="button">Pending</button>
+        <button class="chip" data-filter="submitted" type="button">Submitted</button>
+      </div>
+      <div class="sort-control">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select">
+          <option value="deadline">Deadline, soonest first</option>
+          <option value="credits">Credits, highest first</option>
+        </select>
+      </div>
+    </div>
+
+    <ul class="assignment-list module" id="assignment-list">
+      <li class="empty-state"><strong>No assignments yet</strong>Your teachers haven't posted anything here yet — check back soon.</li>
+    </ul>
+  </main>
+</div>
+
+<script type="module" src="assignments.js"></script>
+</body>
+</html>

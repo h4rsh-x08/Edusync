@@ -1,0 +1,198 @@
+/* Assignments — teacher sets the terms (title, subject, deadline, credits);
+   the student's only job here is attaching the work. That handoff is the
+   one interaction the page is built around. */
+
+.summary-strip {
+  display: flex;
+  gap: 0;
+  margin-bottom: 22px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.summary-stat {
+  flex: 1;
+  padding: 18px 20px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+}
+
+.summary-stat:last-child {
+  border-right: none;
+}
+
+.summary-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--indigo-dark);
+}
+
+.summary-caption {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.assignments-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.sort-control select {
+  padding: 7px 10px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.assignment-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.assignment-row {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-s);
+  background: var(--paper);
+  border-left: 4px solid var(--line-strong);
+}
+
+.assignment-row.high {
+  border-left-color: var(--coral);
+}
+.assignment-row.medium {
+  border-left-color: var(--amber);
+}
+.assignment-row.low {
+  border-left-color: var(--sage);
+}
+
+.assignment-row.submitted {
+  opacity: 0.72;
+}
+
+.assignment-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.assignment-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.assignment-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.assignment-subject {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.assignment-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.assignment-submit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 280px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.assignment-submit input[type="url"] {
+  flex: 1;
+  min-width: 160px;
+  padding: 9px 12px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13.5px;
+}
+
+.assignment-submit input[type="url"]:focus {
+  border-color: var(--indigo);
+}
+
+.submitted-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submitted-link a {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--indigo-dark);
+  padding: 8px 12px;
+  border-radius: var(--radius-s);
+  background: var(--indigo-tint);
+}
+
+.submitted-link a:hover {
+  background: #dde3f8;
+}
+
+.link-edit-toggle {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-size: 12.5px;
+  text-decoration: underline;
+  padding: 4px;
+}
+
+.link-edit-toggle:hover {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 860px) {
+  .summary-strip {
+    flex-wrap: wrap;
+  }
+  .summary-stat {
+    flex: 1 1 33%;
+    border-bottom: 1px solid var(--line);
+  }
+  .assignment-row {
+    flex-direction: column;
+  }
+  .assignment-submit {
+    justify-content: flex-start;
+    min-width: 0;
+    width: 100%;
+  }
+}

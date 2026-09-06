@@ -1,0 +1,189 @@
+/* Results — nothing here is editable, so the page's only job is to
+   make two numbers (CGPA, and each SGPA) instantly readable, then let
+   the curious drop into the per-course detail underneath. */
+
+.cgpa-strip {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.cgpa-block {
+  flex-shrink: 0;
+  text-align: center;
+  padding-right: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.cgpa-value {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--indigo-dark);
+}
+
+.cgpa-caption {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.sgpa-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  flex: 1;
+}
+
+.sgpa-chip {
+  flex-shrink: 0;
+  min-width: 92px;
+  padding: 10px 14px;
+  border-radius: var(--radius-s);
+  background: var(--paper);
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.sgpa-chip:hover {
+  border-color: var(--line-strong);
+}
+
+.sgpa-chip .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.sgpa-chip .lbl {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.semester-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.semester-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.semester-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.semester-summary::-webkit-details-marker {
+  display: none;
+}
+
+.semester-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.semester-summary-left h3 {
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.semester-summary-left .course-count {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.semester-sgpa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.semester-sgpa .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--indigo-dark);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+details[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.semester-body {
+  border-top: 1px solid var(--line);
+  padding: 4px 20px 18px;
+  overflow-x: auto;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 480px;
+}
+
+.result-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  padding: 12px 10px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.result-table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table td.num {
+  text-align: center;
+}
+
+.grade-pill {
+  display: inline-flex;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--indigo-tint);
+  color: var(--indigo-dark);
+}
+
+@media (max-width: 700px) {
+  .cgpa-strip {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cgpa-block {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+}

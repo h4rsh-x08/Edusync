@@ -28,6 +28,30 @@ const NAV_ITEMS = [
     icon: `<rect x="3.5" y="4.5" width="17" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`
   },
   {
+    id: "assignments",
+    label: "Assignments",
+    href: "assignments.html",
+    icon: `<path d="M7 3.5h7l4 4V20a1 1 0 01-1 1H7a1 1 0 01-1-1V4.5a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3.5V8h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13l1.6 1.6L14 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`
+  },
+  {
+    id: "study-material",
+    label: "Study material",
+    href: "study-material.html",
+    icon: `<path d="M12 6.5c-1.8-1.4-4.2-2-7-2v13c2.8 0 5.2.6 7 2 1.8-1.4 4.2-2 7-2v-13c-2.8 0-5.2.6-7 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 6.5v13" stroke="currentColor" stroke-width="1.6"/>`
+  },
+  {
+    id: "attendance",
+    label: "Attendance",
+    href: "attendance.html",
+    icon: `<rect x="3.5" y="4.5" width="17" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.5 14.7l2.1 2.1 4.7-4.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`
+  },
+  {
+    id: "results",
+    label: "Results",
+    href: "results.html",
+    icon: `<path d="M5.5 20V11.5M12 20V6.5M18.5 20v-7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3.5 20.5h17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`
+  },
+  {
     id: "todo",
     label: "To-do list",
     href: "todo.html",

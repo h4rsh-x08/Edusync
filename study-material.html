@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study material · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="study-material.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>Study material</h1>
+        <p class="subline">Reference books, PDFs, and links — from your faculty and from you.</p>
+      </div>
+    </header>
+
+    <form id="material-form" class="add-material module">
+      <div class="field grow">
+        <label for="material-title">Title</label>
+        <input type="text" id="material-title" placeholder="e.g. Unit 3 lecture notes" required>
+      </div>
+      <div class="field">
+        <label for="material-subject">Subject</label>
+        <input type="text" id="material-subject" placeholder="e.g. DBMS">
+      </div>
+      <div class="field">
+        <label for="material-type">Type</label>
+        <select id="material-type">
+          <option value="book">Book</option>
+          <option value="pdf" selected>PDF</option>
+          <option value="link">Link</option>
+        </select>
+      </div>
+      <div class="field grow">
+        <label for="material-url">Link</label>
+        <input type="url" id="material-url" placeholder="https://…" required>
+      </div>
+      <button type="submit" class="btn primary">Add material</button>
+    </form>
+
+    <div class="material-toolbar">
+      <div class="filter-chips" id="filter-chips">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="book" type="button">Books</button>
+        <button class="chip" data-filter="pdf" type="button">PDFs</button>
+        <button class="chip" data-filter="link" type="button">Links</button>
+      </div>
+    </div>
+
+    <div class="material-grid" id="material-grid">
+      <p class="empty-state"><strong>Shelf's empty</strong>Add a reference above, or check back once your faculty has posted something.</p>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="study-material.js"></script>
+</body>
+</html>

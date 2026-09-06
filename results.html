@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="results.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>Results</h1>
+        <p class="subline">Posted by your institution — quizzes, mid-sems, end-sems, and your CGPA.</p>
+      </div>
+    </header>
+
+    <section class="module cgpa-strip">
+      <div class="cgpa-block">
+        <div class="cgpa-value" id="cgpa-value">—</div>
+        <div class="cgpa-caption">CGPA</div>
+      </div>
+      <div class="sgpa-scroll" id="sgpa-scroll">
+        <!-- SGPA chips injected here -->
+      </div>
+    </section>
+
+    <div class="section-title"><h2>Semester-wise results</h2></div>
+    <div class="semester-list" id="semester-list">
+      <p class="empty-state"><strong>No results posted yet</strong>Once your institution publishes results, they'll show up here.</p>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="results.js"></script>
+</body>
+</html>

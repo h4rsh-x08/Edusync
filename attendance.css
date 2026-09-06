@@ -1,0 +1,269 @@
+/* Attendance — the one number that matters (75%) gets the one bold
+   shape on the page (the ring); every course below it is a quiet,
+   scannable row so the whole term fits on one screen. */
+
+.overview-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 20px;
+}
+
+.overview-ring {
+  position: relative;
+  width: 108px;
+  height: 108px;
+  flex-shrink: 0;
+}
+
+.overview-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--surface-sunken);
+  stroke-width: 10;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: var(--sage);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 314.159;
+  stroke-dashoffset: 314.159;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+}
+
+.overview-ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview-pct {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.overview-caption {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.overview-text {
+  min-width: 0;
+}
+
+.overview-headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.overview-sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.add-course {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-course .field.grow {
+  flex: 1;
+  min-width: 220px;
+}
+
+.add-course .field {
+  min-width: 150px;
+}
+
+.add-course .btn {
+  height: 40px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.course-grid .empty-state {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-card.safe {
+  border-top: 3px solid var(--sage);
+}
+.course-card.warning {
+  border-top: 3px solid var(--amber);
+}
+.course-card.danger {
+  border-top: 3px solid var(--coral);
+}
+
+.course-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.course-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.course-delete {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.course-delete:hover {
+  color: var(--coral);
+}
+
+.course-stats-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.course-pct {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.course-pct.safe {
+  color: var(--sage);
+}
+.course-pct.warning {
+  color: var(--amber);
+}
+.course-pct.danger {
+  color: var(--coral);
+}
+
+.course-count {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.course-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  overflow: hidden;
+}
+
+.course-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+.course-fill.safe {
+  background: var(--sage);
+}
+.course-fill.warning {
+  background: var(--amber);
+}
+.course-fill.danger {
+  background: var(--coral);
+}
+
+.course-message {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.course-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.course-actions .btn {
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+.course-edit {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.course-edit input {
+  width: 64px;
+  padding: 7px 8px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 13px;
+  text-align: center;
+}
+
+.course-edit input:focus {
+  border-color: var(--indigo);
+  background: var(--surface);
+}
+
+.course-edit-toggle {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-size: 12.5px;
+  text-decoration: underline;
+  align-self: flex-start;
+  padding: 0;
+}
+
+.course-edit-toggle:hover {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .overview-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .add-course {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

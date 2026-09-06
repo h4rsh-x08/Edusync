@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance · EduSync</title>
+<link rel="stylesheet" href="common/styles.css">
+<link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-root"></div>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <h1>Attendance</h1>
+        <p class="subline">75% is the line. Here's how much room you have on either side of it.</p>
+      </div>
+    </header>
+
+    <section class="module overview-card">
+      <div class="overview-ring">
+        <svg viewBox="0 0 120 120" id="overview-ring-svg">
+          <circle cx="60" cy="60" r="50" class="ring-track"/>
+          <circle cx="60" cy="60" r="50" class="ring-fill" id="overview-ring-fill"/>
+        </svg>
+        <div class="overview-ring-label">
+          <span class="overview-pct" id="overview-pct">—</span>
+          <span class="overview-caption">overall</span>
+        </div>
+      </div>
+      <div class="overview-text">
+        <div class="overview-headline" id="overview-headline">Add a course to get started</div>
+        <div class="overview-sub" id="overview-sub">Attendance across all your courses combined, weighted by classes held.</div>
+      </div>
+    </section>
+
+    <form id="course-form" class="add-course module">
+      <div class="field grow">
+        <label for="course-name">Course</label>
+        <input type="text" id="course-name" placeholder="e.g. Database Management Systems" required>
+      </div>
+      <div class="field">
+        <label for="course-total">Classes held so far</label>
+        <input type="number" id="course-total" min="0" placeholder="0">
+      </div>
+      <div class="field">
+        <label for="course-attended">Classes you attended</label>
+        <input type="number" id="course-attended" min="0" placeholder="0">
+      </div>
+      <button type="submit" class="btn primary">Add course</button>
+    </form>
+
+    <div class="course-grid" id="course-grid">
+      <p class="empty-state"><strong>No courses tracked yet</strong>Add your first course above to start tracking attendance.</p>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="attendance.js"></script>
+</body>
+</html>
